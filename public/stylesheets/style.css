@@ -1,0 +1,16 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+/* Body and default styles */
+
+.profile-pic {
+  float: left;
+  width: 100px;
+  height: "auto";
+  margin-right: 20px;
+}

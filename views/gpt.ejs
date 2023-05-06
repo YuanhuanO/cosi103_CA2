@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h1>Paparazzi Generator</h1>
+  <form action="/reply" method="post">
+    <div class="mb-3">
+      <label for="rumor" class="form-label">Tell the rumors of this celebrity:</label>
+      <input name="rumor" id="rumor" cols="30" rows="10" class="form-control"></input>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<div class="container mt-5">
+  <hr>
+  <h2>The rumors about him/her/them 🤫</h2>
+  <ul class="list-group mt-3">
+    <% rumors.forEach(rumor => { %>
+    <li class="list-group-item">
+      <div class="fw-bold">
+        <h6><b>Celebrity Name</b></h6>
+      </div>
+      <div class="mb-2"><%= rumor.inputRumor %></div>
+      <div class="fw-bold">
+        <h6><b>Their Recent Rumors</b></h6>
+      </div>
+      <div><i><%= rumor.outputRumor %></i></div>
+      <form action="/gpt/<%= rumor._id %>?_method=DELETE" method="post">
+        <button type="submit" class="btn btn-sm btn-danger mt-3">Delete</button>
+      </form>
+    </li>
+    <% }) %>
+  </ul>
+</div>
